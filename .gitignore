@@ -1,0 +1,6 @@
+variables.py
+.idea
+__init__.py
+*.txt
+*.json
+__pycache__
