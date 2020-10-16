@@ -10,7 +10,7 @@ Both AQ and BWL bosses seem to have 24 level-based resistance, which cant be mit
  
 ## Wands are using spellhit from gear, Elemental Precision does not count
 **[Link to script](wand_hit_check.py)**\
-**[Results for p4 / Chromaggus](crawl-data/wands%20p4.md)**\
+**[Results for p4 / Chromaggus](crawl-data/wandsp4.md)**\
 **[Results for p5 / Viscidus](https://pastebin.com/NBdwXpdB)**
 <br/>This script was used to check wands on Chromaggus from p4 logs (since wands behavior may have been changed in p5).\
 Looks like wands always was using spellhit from gear.\
