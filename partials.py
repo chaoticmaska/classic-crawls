@@ -243,10 +243,10 @@ def run():  # Get reports, gather data and write it down
             # Rewrite crawl results sometimes to backup in case of crash or error
             fileName = '{}-{}-{}.txt'.format(zoneNumber, encounterName, s)
             f = open(fileName, 'w')
-            f.write(f'#{encounterName}\n')
-            f.write('###No curse: {}\n'.format(calcMitigation(result[0])))
-            f.write('###With curse: {}\n\n'.format(calcMitigation(result[1])))
-            f.write('#####Dataset (number of casts by % of damage done):\n')
+            f.write(f'# {encounterName}\n')
+            f.write('### No curse: {}\n'.format(calcMitigation(result[0])))
+            f.write('### With curse: {}\n\n'.format(calcMitigation(result[1])))
+            f.write('##### Dataset (number of casts by % of damage done):\n')
             f.write('No curse: 25% - {} | 50% - {} | 75% - {} | 100% - {}\\\n'.format(
                 result[0][0],
                 result[0][1],
