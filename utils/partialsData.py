@@ -120,6 +120,29 @@ encounters = [
         'name': 'MC'  # Will run for every boss for zone=1000
     },
 
+    ##### NAXX SECTION ######
+    {
+        "encounterID": 1107,
+        "name": "Anub",
+        'bossID': 15956,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1110,
+        "name": "Faerlina",
+        'bossID': 15953,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1116,
+        "name": "Maexxna",
+        'bossID': 15952,
+        'zone': 1006
+    },
+    {
+        'name': 'NAXX'  # Will run for every boss for zone=1006
+    },
+
     ##### TRASH SECTION #####
     # Results COULD be scuffed for fights where multiple mobs of same ID are present
     # Cuz script will assume curse is up on all of them, if curse is presented on one of them

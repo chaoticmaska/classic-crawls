@@ -224,6 +224,7 @@ def run():  # Get reports, gather data and write it down
     reportCount = len(reportSet)
     processedCount = 0
     encounterName = encounterData.get('encounterData').get('name')
+    zoneNumber = encounterData.get('zone')
     for url in reportSet:
         report = Report(url)
         data = report.returnPartialsTable()
@@ -238,19 +239,21 @@ def run():  # Get reports, gather data and write it down
                 encounterName
             )
         )
-        if processedCount % 10 == 0:  # Rewrite crawl results sometimes to backup in case of crash or error
-            fileName = '{}-{}.txt'.format(encounterName, s)
+        if processedCount % 10 == 0 or processedCount == len(reportSet):
+            # Rewrite crawl results sometimes to backup in case of crash or error
+            fileName = '{}-{}-{}.txt'.format(zoneNumber, encounterName, s)
             f = open(fileName, 'w')
-            f.write('##### No curse: {}\n'.format(calcMitigation(result[0])))
-            f.write('##### With curse: {}\n\n'.format(calcMitigation(result[1])))
-            f.write('Dataset (number of casts by % of damage done):\n')
-            f.write('##### No curse: 25% - {} | 50% - {} | 75% - {} | 100% - {}\n'.format(
+            f.write(f'#{encounterName}\n')
+            f.write('###No curse: {}\n'.format(calcMitigation(result[0])))
+            f.write('###With curse: {}\n\n'.format(calcMitigation(result[1])))
+            f.write('#####Dataset (number of casts by % of damage done):\n')
+            f.write('No curse: 25% - {} | 50% - {} | 75% - {} | 100% - {}\\\n'.format(
                 result[0][0],
                 result[0][1],
                 result[0][2],
                 result[0][3]
             ))
-            f.write('##### With curse: 25% - {} | 50% - {} | 75% - {} | 100% - {}\n'.format(
+            f.write('With curse: 25% - {} | 50% - {} | 75% - {} | 100% - {}\n'.format(
                 result[1][0],
                 result[1][1],
                 result[1][2],
@@ -266,6 +269,10 @@ if __name__ == '__main__':  # General stuff like parse args and run crawls for s
     l = args.limit
     for zone in z:
         # Raid zones
+        if zone == 'NAXX':
+            for encounter in mapRaidZone(1006):
+                encounterData = mapCrawlArgs(s, encounter.get('name'))
+                run()
         if zone == 'AQ':
             for encounter in mapRaidZone(1005):
                 encounterData = mapCrawlArgs(s, encounter.get('name'))

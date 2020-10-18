@@ -3,6 +3,7 @@
 
 ## Resistance values of bosses and/or trash in 40-man raids - mostly 24
 **[Link to script](partials.py)**\
+**[Results for Naxx, taken from low numbers of PTR logs](crawl-data/naxxres.md)**\
 **[Results for AQ - temporary, will update later](https://pastebin.com/y14f587M)**
 <br/>Script currently does not work for Chromaggus and Shazzrah. Schools available are Fire and Shadow.\
 Both AQ and BWL bosses seem to have 24 level-based resistance, which cant be mitigated with spell penetration (will post about it later).\
