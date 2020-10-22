@@ -140,6 +140,24 @@ encounters = [
         'zone': 1006
     },
     {
+        "encounterID": 1117,
+        "name": "Noth",
+        'bossID': 15954,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1112,
+        "name": "Heigan",
+        'bossID': 15936,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1115,
+        "name": "Loatheb",
+        'bossID': 16011,
+        'zone': 1006
+    },
+    {
         'name': 'NAXX'  # Will run for every boss for zone=1006
     },
 
