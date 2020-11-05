@@ -158,6 +158,48 @@ encounters = [
         'zone': 1006
     },
     {
+        "encounterID": 1118,
+        "name": "Patchwerk",
+        'bossID': 16028,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1111,
+        "name": "Grobbulus",
+        'bossID': 15931,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1108,
+        "name": "Gluth",
+        'bossID': 15932,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1120,
+        "name": "Stalagg",
+        'bossID': 15929,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1120,
+        "name": "Thaddius",
+        'bossID': 15928,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1119,
+        "name": "Sapph",
+        'bossID': 15989,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "KT",
+        'bossID': 15990,
+        'zone': 1006
+    },
+    {
         'name': 'NAXX'  # Will run for every boss for zone=1006
     },
 

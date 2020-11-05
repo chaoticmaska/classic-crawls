@@ -40,4 +40,25 @@ With curse: 25% - 59 | 50% - 212 | 75% - 552 | 100% - 4137
 ##### Dataset (number of casts by % of damage done):
 No curse: 25% - 101 | 50% - 369 | 75% - 941 | 100% - 6926\
 With curse: 25% - 16 | 50% - 73 | 75% - 160 | 100% - 1337
+# Sapph
+### No curse: 23.5
+### With curse: 25.5
+
+##### Dataset (number of casts by % of damage done):
+No curse: 25% - 44 | 50% - 256 | 75% - 515 | 100% - 4359\
+With curse: 25% - 155 | 50% - 754 | 75% - 1725 | 100% - 12564
+# KT
+### No curse: 24.8
+### With curse: 24.4
+
+##### Dataset (number of casts by % of damage done):
+No curse: 25% - 34 | 50% - 269 | 75% - 561 | 100% - 4230\
+With curse: 25% - 74 | 50% - 407 | 75% - 871 | 100% - 6839
+# KT SHADOW
+### No curse: 102.2
+### With curse: 39.8
+
+##### Dataset (number of casts by % of damage done):
+No curse: 25% - 166 | 50% - 537 | 75% - 1342 | 100% - 949\
+With curse: 25% - 55 | 50% - 396 | 75% - 1293 | 100% - 4192
 

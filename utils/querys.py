@@ -86,6 +86,28 @@ def twinEmpEvents(url: str) -> dict:
     '''.format(url=url)
     return fetchGraphQL(query)
 
+#####################
+##### Patchwerk #####
+def patchwerkHatefulStrike(url: str) -> dict:
+    query = '''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                events(
+                    dataType: DamageDone
+                    startTime: 0
+                    endTime: 99999999999
+                    hostilityType: Enemies
+                    abilityID: 28308
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''.format(url=url)
+    return fetchGraphQL(query)
 
 ####################
 ##### Partials #####
