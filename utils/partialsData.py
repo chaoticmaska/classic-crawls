@@ -200,6 +200,42 @@ encounters = [
         'zone': 1006
     },
     {
+        "encounterID": 1114,
+        "name": "Instructor",
+        'bossID': 16061,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "Gothik",
+        'bossID': 16060,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "Mograine",
+        'bossID': 16062,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "Blaumeux",
+        'bossID': 16065,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "Zeliek",
+        'bossID': 16063,
+        'zone': 1006
+    },
+    {
+        "encounterID": 1114,
+        "name": "Thane",
+        'bossID': 16064,
+        'zone': 1006
+    },
+    {
         'name': 'NAXX'  # Will run for every boss for zone=1006
     },
 

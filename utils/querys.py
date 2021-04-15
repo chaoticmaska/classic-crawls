@@ -86,6 +86,31 @@ def twinEmpEvents(url: str) -> dict:
     '''.format(url=url)
     return fetchGraphQL(query)
 
+
+#####################
+##### Twin Emps #####
+def twinEmpEvents(url: str) -> dict:
+    query = '''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                events(
+                    dataType: Casts
+                    startTime: 0
+                    endTime: 99999999999
+                    hostilityType: Enemies
+                    abilityID: 800
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''.format(url=url)
+    return fetchGraphQL(query)
+
+
 #####################
 ##### Patchwerk #####
 def patchwerkHatefulStrike(url: str) -> dict:
@@ -108,6 +133,7 @@ def patchwerkHatefulStrike(url: str) -> dict:
     }}
     '''.format(url=url)
     return fetchGraphQL(query)
+
 
 ####################
 ##### Partials #####
@@ -224,6 +250,34 @@ def reportGearQueryWands(url: str, startTime: int = 0) -> dict:
     return fetchGraphQL(query)
 
 
+def reportGearQuerySmite(url: str, startTime: int = 0) -> dict:
+    query = f'''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                masterData {{
+                    actors(type: "Player") {{
+                        id
+                        type
+                        subType
+                    }}
+                }}
+                events(
+                    dataType: CombatantInfo
+                    endTime: 99999999999
+                    startTime: {startTime}
+                    encounterID: 717
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''
+    return fetchGraphQL(query)
+
+
 def reportDamageQueryWands(url: str) -> dict:
     query = f'''
     {{
@@ -235,6 +289,102 @@ def reportDamageQueryWands(url: str) -> dict:
                     startTime: 0
                     encounterID: 616
                     abilityID: 5019
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''
+    return fetchGraphQL(query)
+
+
+def reportDamageQuerySmite(url: str) -> dict:
+    query = f'''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                events(
+                    dataType: DamageDone
+                    killType: Encounters
+                    endTime: 99999999999
+                    encounterID: 717
+                    startTime: 0
+                    abilityID: 10934
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''
+    return fetchGraphQL(query)
+
+
+def sapphDmgTaken(url: str, startTime: int = 0):
+    query = f'''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                events(
+                      encounterID: 1119
+                      killType: All
+                      dataType: DamageTaken
+                      startTime: {startTime}
+                      endTime: 99999999999
+                      abilityID: 28531
+                ) {{
+                    data
+                    nextPageTimestamp
+                }}
+            }}
+        }}
+    }}
+    '''
+    return fetchGraphQL(query)
+
+
+def obsidianTable(url: str):
+    query = f'''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                table(
+                      encounterID: 1119
+                      killType: All
+                      dataType: DamageDone
+                      startTime: 0
+                      endTime: 99999999999
+                        filterExpression: "source.class in ('Warrior', 'Paladin')"
+                )
+            }}
+        }}
+    }}
+    '''
+    return fetchGraphQL(query)
+
+
+#####################
+##### Time to first cast #####
+def firstCastTime(url: str, encounterID: int, abilityID: int) -> dict:
+    query = f'''
+    {{
+        reportData {{
+            report(code: "{url}") {{
+                fights(
+                    killType: All
+                    encounterID: {encounterID}
+                ) {{
+                    startTime
+                }}
+                events(
+                    dataType: Casts
+                    startTime: 0
+                    endTime: 99999999999
+                    hostilityType: Enemies
+                    abilityID: {abilityID}
                 ) {{
                     data
                     nextPageTimestamp
