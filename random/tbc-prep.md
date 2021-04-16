@@ -8,9 +8,8 @@
 
 
 # TBC for classic Andy
+[Partial resistance cant result in 100% damage mitigation](https://discord.com/channels/253212375790911489/824018460655747132/832610059041243156) - confirmed, same as classic
+
 [Debuffs still snapshot on cast end](https://discord.com/channels/253212375790911489/813709272562663424/832229861484920883) (more or less confirmed)
 
 [Molten Fury snapshots on cast end](https://discord.com/channels/253212375790911489/824018460655747132/831980332768297020) (more or less confirmed)
-
-### Work in progress
-Partials/level-based resistance - waiting to confirm or deny classic behavior (cant lead to 100% resist) and talents in logs to start working on boss resistances

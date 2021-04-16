@@ -3,6 +3,7 @@ import time
 from variables import wcl_token as token
 from datetime import datetime
 import urllib3
+import json
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 apiUrl = 'https://classic.warcraftlogs.com/api/v2'
@@ -11,11 +12,21 @@ headers = {"Authorization": bearer}
 
 
 def fetchGraphQL(query):
+    file = open('data.json', 'r')
+    data = json.load(file)
+    file.close()
+    if data.get(query):
+        return data.get(query).get('data')
     try:
         response = requests.post(apiUrl, json={'query': query}, headers=headers).json()
         if not response or response.get('errors'):
             return {}
         else:
+            file = open('data.json', 'w')
+            data[query] = response
+            if data:
+                file.write(json.dumps(data))
+            file.close()
             return response.get('data')
     except Exception as e:
         print(e)
