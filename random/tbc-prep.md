@@ -1,5 +1,5 @@
 # TBC beta stuff
-[~~GCD currently has no cap](https://discord.com/channels/253212375790911489/812641242222821376/832300447242518568) (working as intended)~~ fixed
+[~~GCD currently has no cap~~](https://discord.com/channels/253212375790911489/812641242222821376/832300447242518568) fixed
 
 [Netherspite has 0 partials for some reason](https://classic.warcraftlogs.com/reports/1T3n6L2jc9WmxMwX#type=damage-done&ability=-30451&view=events&fight=50) (WTB reason why tbh)
 
